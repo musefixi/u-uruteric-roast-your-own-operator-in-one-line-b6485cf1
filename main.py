@@ -27,6 +27,7 @@ def main() -> None:
 
     with open(out_path, encoding="utf-8") as f:
         content = f.read()
+    assert content == ROAST + "\n", "round-trip mismatch: file content differs from ROAST"
 
     lines = content.splitlines()
     assert len(lines) == 1, f"expected exactly 1 line, got {len(lines)}"
